@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'Hermit', Fallback, sans-serif;
+    src: url("/fonts/Hermit-bold.otf") format("opentype");
+}
+
+html, body {
+    margin: 0px;
+    height: 100%;
+    font-family: 'Hermit', Fallback, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    padding: 10px;
+    margin: 0 auto;
+    width: 600px;
+}
+
+header {
+    margin-bottom: 50px;
+}
+
+header, footer {
+    background: #202020;
+    color: #cccccc;
+    padding: 10px;
+    text-align: center;
+}
+
+footer {
+    margin-top: auto;
+}
+
+#wordcloud {
+    width: 600px;
+    height: 600px;
+    border: 0px solid #ff;
+}
