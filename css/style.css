@@ -1,42 +1,89 @@
 @font-face {
   font-family: 'Source Code Pro';
   src: url('/font/SourceCodePro-Regular.ttf');
+  color: #28272a;
 }
 
 * {
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+}
+
+a:link {
+  color: #354e7e;
+}
+
+/* visited link */
+a:visited {
+  color: #354e7e;
+}
+
+/* mouse over link */
+a:hover {
+  color: #ec5d14;
+}
+
+/* selected link */
+a:active {
+  color: #354e7e;
+}
+
 body {
     font-family: 'Source Code Pro', Monaco, monospace;
-    background: #eeeeee;
+    background: #faf8f5;
 }
 
 #header {
     font-size: 1.5em;
     font-weight: 700;
     margin: 8 0 4 12px;
+    display: inline-flex;
+}
+
+#header .name {
+    float: left;
+}
+
+#header .navi {
+    font-size: 0.6em;
+    margin: 8 0 0 32px;
+}
+
+#header .navi span {
+    border-left: 1px solid #28272a;
+    padding-left: 8px;
+}
+
+:hover{
+    transition:all 0.5s ease;
+}
+
+.last {
+    border-right: 1px solid #28272a;
+    padding-right: 8px;
+}
+
+.subtitle {
+    color: #788fb3;
+    margin: 2 0 4 12px;
+    font-size: 0.8em;
 }
 
 /* ---- grid ---- */
-#grid {
-    /* background: #ddd; */
-    /* max-width: 1200px; */
-}
-
-/* clear fix */
 .grid:after {
     content: '';
     display: block;
     clear: both;
 }
 
-/* ---- .grid-item ---- */
 .grid-item {
     float: left;
     width: 220px;
     /* height: 160px; */
-    background-color: #fff;
+    background-color: #fefefe;
     border: 1px solid #333;
     border-color: hsla(0, 0%, 0%, 0.1);
     border-radius: 5px;
