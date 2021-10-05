@@ -1,0 +1,10 @@
+version: '3'
+
+tasks:
+    default:
+        cmds:
+            - task: serve
+
+    serve:
+        cmds:
+            - cmd: caddy file-server --listen :8989
