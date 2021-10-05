@@ -1,7 +1,7 @@
 @font-face {
-  font-family: 'Source Code Pro';
-  src: url('/font/SourceCodePro-Regular.ttf');
-  color: #28272a;
+    font-family: 'Source Code Pro';
+    src: url('/font/SourceCodePro-Regular.ttf');
+    color: #28272a;
 }
 
 * {
@@ -13,22 +13,22 @@ a {
 }
 
 a:link {
-  color: #354e7e;
+    color: #354e7e;
 }
 
 /* visited link */
 a:visited {
-  color: #354e7e;
+    color: #354e7e;
 }
 
 /* mouse over link */
 a:hover {
-  color: #ec5d14;
+    color: #ec5d14;
 }
 
 /* selected link */
 a:active {
-  color: #354e7e;
+    color: #354e7e;
 }
 
 body {
@@ -57,8 +57,8 @@ body {
     padding-left: 8px;
 }
 
-:hover{
-    transition:all 0.5s ease;
+:hover {
+    transition: all 0.5s ease;
 }
 
 .last {
@@ -103,7 +103,6 @@ body {
 
 /* .grid-item--height2 { height: 200px; }
 .grid-item--height3 { height: 240px; } */
-
 .grid-item .header {
     display: inline-block;
     margin-bottom: 2px;
