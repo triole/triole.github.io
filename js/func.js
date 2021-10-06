@@ -1,5 +1,9 @@
 function init() {
-    fetch_json('https://api.github.com/users/triole/repos?page=1&per_page=1000')
+    var url = 'https://api.github.com/users/triole/repos?page=1&per_page=1000';
+    if (window.location.host.includes('localhost')){
+        url = '/tmp/repos.json'
+    }
+    fetch_json(url)
         .then(res => {
             append_repos(res);
             return res;
@@ -66,7 +70,7 @@ function map_lang(lang) {
 function make_entry(repo) {
     html = '<div class="grid-item">';
     html += '<div class="header">'
-    html += '<div class="title"><a href="' + repo.html_url + '">' + after_last_slash(repo.full_name) + '</a></div>';
+    html += '<div class="title"><a href="' + repo.html_url + '">' + repo.name + '</a></div>';
     html += '<div class="badges"></div>';
     html += '<div class="watchers">' + clean(repo.watchers_count) + '</div>';
     html += '</div>'
