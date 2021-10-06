@@ -1,4 +1,4 @@
-@font-face {
+ca@font-face {
     font-family: 'Source Code Pro';
     src: url('/font/SourceCodePro-Regular.ttf');
     color: #28272a;
@@ -84,8 +84,7 @@ body {
     width: 220px;
     /* height: 160px; */
     background-color: #fefefe;
-    border: 1px solid #333;
-    border-color: hsla(0, 0%, 0%, 0.1);
+    border: 1px solid hsla(0, 0%, 0%, 0.1);
     border-radius: 5px;
     box-shadow: 1px 2px hsla(0, 0%, 0%, 0.3);
     counter-increment: item;
@@ -93,12 +92,8 @@ body {
     padding: 6px;
 }
 
-.grid-item:before {
-    font-size: 20px;
-    text-align: center;
-    display: block;
-    /* padding: 0.1em; */
-    /* content: counter(item); */
+.grid-item:hover{
+    background-color: #faf8f5;
 }
 
 /* .grid-item--height2 { height: 200px; }
@@ -114,5 +109,20 @@ body {
 }
 
 .grid-item .header .watchers {
+    padding-top: 4px;
+    position: absolute;
+    top: 4px;
+    right: 9px;
+}
+
+.grid-item .lang {
     float: right;
+    padding: 0px;
+    /* position: absolute;
+    bottom: 4px;
+    right: 4px; */
+}
+
+.grid-item .lang img {
+    height: 1em;
 }

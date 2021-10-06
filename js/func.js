@@ -41,6 +41,28 @@ function clean(s) {
     return s
 }
 
+function map_lang(lang) {
+    r = '';
+    if (typeof lang === 'string' || lang instanceof String) {
+        var m = {};
+        m.css = "/gfx/css.svg";
+        m.go = "/gfx/golang.svg";
+        m.html = "/gfx/html.svg";
+        m.javascript = "/gfx/javascript.svg";
+        m.lua = "/gfx/lua.svg";
+        m.python = "/gfx/python.svg";
+        m.shell = "/gfx/shell.svg";
+        m.rust = "/gfx/rust.svg";
+        r = m[lang.toLowerCase()];
+    }
+    if (r === undefined || r === null || r === '') {
+        r = '';
+    } else {
+        r = '<img src="' + r + '" alt="' + lang + '">';
+    }
+    return r;
+}
+
 function make_entry(repo) {
     html = '<div class="grid-item">';
     html += '<div class="header">'
@@ -48,10 +70,16 @@ function make_entry(repo) {
     html += '<div class="badges"></div>';
     html += '<div class="watchers">' + clean(repo.watchers_count) + '</div>';
     html += '</div>'
-    html += '<div class="description">' + clean(repo.description) + '</div>';
+    html += '<div class="description">' + clean(repo.description);
+    html += '</div>';
+    html += '<div class="lang">' + map_lang(repo.language) + '</div>';
     html += '</div>';
     return html
 }
+
+String.prototype.toTitleCase = function () {
+    return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+};
 
 async function fetch_json(url) {
     let response = await fetch(url);
