@@ -1,6 +1,6 @@
 function init() {
     var url = 'https://api.github.com/users/triole/repos?page=1&per_page=1000';
-    if (window.location.host.includes('localhost')){
+    if (window.location.host.includes('localhost')) {
         url = '/tmp/repos.json'
     }
     fetch_json(url)
@@ -45,6 +45,16 @@ function clean(s) {
     return s
 }
 
+function render_topics(topics) {
+    html = '';
+    topics.forEach(function(top) {
+        html += '<span class="topicspan">';
+        html += '<a href="https://github.com/topics/' + top + '">';
+        html += top + '</a></span>';
+    });
+    return html;
+}
+
 function map_lang(lang) {
     r = '';
     if (typeof lang === 'string' || lang instanceof String) {
@@ -75,14 +85,17 @@ function make_entry(repo) {
     html += '<div class="watchers">' + clean(repo.watchers_count) + '</div>';
     html += '</div>'
     html += '<div class="description">' + clean(repo.description);
+    html += '<div class="topics">' + render_topics(repo.topics) + '</div>';
     html += '</div>';
     html += '<div class="lang">' + map_lang(repo.language) + '</div>';
     html += '</div>';
     return html
 }
 
-String.prototype.toTitleCase = function () {
-    return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+String.prototype.toTitleCase = function() {
+    return this.replace(/\w\S*/g, function(txt) {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
 };
 
 async function fetch_json(url) {

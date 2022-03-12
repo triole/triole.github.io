@@ -92,7 +92,7 @@ body {
     padding: 6px;
 }
 
-.grid-item:hover{
+.grid-item:hover {
     background-color: #faf8f5;
 }
 
@@ -113,6 +113,28 @@ body {
     position: absolute;
     top: 4px;
     right: 9px;
+}
+
+.grid-item .topics {
+    margin: 5 0px;
+    font-size: 70%;
+}
+
+.topicspan {
+    display: inline-block;
+    margin: 2 2 0 0px;
+}
+
+.topicspan a {
+    border-radius: 4px;
+    padding: 0 2px;
+    background-color: #354e7e;
+    color: #faf8f5;
+}
+
+.topicspan a:hover {
+    color: #faf8f5;
+    background-color: #ec5d14;
 }
 
 .grid-item .lang {
