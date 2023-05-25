@@ -46,7 +46,7 @@ function clean(s) {
 }
 
 function render_topics(topics) {
-  html = ''
+  var html = ''
   topics.forEach(function (top) {
     html += '<span class="topicspan">'
     html += '<a href="https://github.com/topics/' + top + '">'
@@ -56,7 +56,7 @@ function render_topics(topics) {
 }
 
 function map_lang(lang) {
-  r = ''
+  var r = ''
   if (typeof lang === 'string' || lang instanceof String) {
     var m = {}
     m.css = '/gfx/css.svg'
@@ -78,7 +78,7 @@ function map_lang(lang) {
 }
 
 function make_entry(repo) {
-  html = '<div class="grid-item">'
+  var html = '<div class="grid-item">'
   html += '<div class="header">'
   html += '<div class="title"><a href="' + repo.html_url + '">' + repo.name + '</a></div>'
   html += '<div class="badges"></div>'
